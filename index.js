@@ -45,7 +45,6 @@ class App{
 
     sendMessageTest(){
         this.bot.sendMessage(this.database.getByName('Gianni'), 'TEEEEST!');
-        this.bot.sendMessage(this.database.getByName('Francesco'), 'TEEEEST!');
     }
 
 }
@@ -55,6 +54,13 @@ const rule = new schedule.RecurrenceRule();
 rule.hour = 7;
 rule.minute = 0;
 
+const ruleTest = new schedule.RecurrenceRule();
+ruleTest.minute = 10;
+
 schedule.scheduleJob(rule, () => {
     app.checkTurn();
+});
+
+schedule.scheduleJob(ruleTest, () => {
+    app.sendMessageTest();
 });
