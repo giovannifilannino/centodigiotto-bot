@@ -4,7 +4,7 @@ module.exports = class TelegramManager{
 
     constructor(){
         var token = '676418428:AAFvlg-sQHkdFId4Xs--hsR-4LMGAiLPbII';
-        this.bot = new telegramBot(token);
+        this.bot = new telegramBot(token, {'webHook.port' : process.env.PORT || 8443});
         
     }
 
