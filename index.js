@@ -57,7 +57,7 @@ rule.minute = 0;
 const ruleTest = new schedule.RecurrenceRule();
 ruleTest.minute = 10;
 
-schedule.scheduleJob(rule, () => {
+schedule.scheduleJob(ruleTest, () => {
     app.checkTurn();
 });
 
