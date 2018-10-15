@@ -4,10 +4,14 @@ module.exports = class DatabaseUser{
 
     constructor(){
         this.database = [];
-        this.database.push(new User(1,'Gianni','Filannino', 'E','C','B',156340013));
-        this.database.push(new User(2,'Antonio','Di Lallo', 'E', 'B', 'C',432883825));
-        this.database.push(new User(3,'Valerio','Tanferna', 'O','C','B',213316483));
-        this.database.push(new User(4,'Francesco','Grande', 'O','B','C',434127723));
+        const gianniKey = process.env.gianniTelegramNumber;
+        const antonioKey = process.env.andonioTelegramNumber;
+        const valerioKey = process.env.valerioTelegramNumber;
+
+        this.database.push(new User(1,'Gianni','Filannino', 'E','C','B',gianniKey));
+        this.database.push(new User(2,'Antonio','Di Lallo', 'E', 'B', 'C',antonioKey));
+        this.database.push(new User(3,'Valerio','Tanferna', 'O','C','B',valerioKey));
+        //this.database.push(new User(4,'Francesco','Grande', 'O','B','C',));
     }
 
     getById(id){
