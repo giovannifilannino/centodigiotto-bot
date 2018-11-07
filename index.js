@@ -57,7 +57,3 @@ rule.minute = 0;
 schedule.scheduleJob(rule, () => {
     app.checkTurn();
 });
-
-schedule.scheduleJob(rule, () => {
-    app.sendMessageTest();
-});
